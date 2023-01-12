@@ -1,4 +1,4 @@
-# Libraries Data Tool ⚒️
+# Libraries Data Tool 📚 ⚒️
 
 Convert data from library and related databases to formats to easily ingest into Elasticsearch
 
@@ -6,7 +6,7 @@ Convert data from library and related databases to formats to easily ingest into
 
 Personal learning project to experiment with various solutions
 
-## Workflow
+## Workflow 🛤️
 
 - Works: Book, Music, Film
 
@@ -20,3 +20,11 @@ graph LR;
     Elasticsearch-->Elastic_index_Persons;
     Elasticsearch-->Elastic_index_Libraries;
 ```
+
+## Credits 👏
+
+-Example works data from [Deichman](https://deichman.no//)
+
+## License 📝
+
+The work is under exclusive copyright by default.
