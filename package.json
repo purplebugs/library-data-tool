@@ -1,0 +1,19 @@
+{
+  "name": "libraries-data-tool",
+  "version": "1.0.0",
+  "description": "Extract data from various sources -> transform -> ingest to Elasticsearch",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/purplebugs/libraries-data-tool.git"
+  },
+  "author": "Anita Lipsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/purplebugs/libraries-data-tool/issues"
+  },
+  "homepage": "https://github.com/purplebugs/libraries-data-tool#readme"
+}
