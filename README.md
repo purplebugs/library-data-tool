@@ -23,7 +23,7 @@ graph LR;
 
 ## Credits 👏
 
--Example works data from [Deichman](https://deichman.no//)
+- Example works data from [Deichman](https://deichman.no/)
 
 ## License 📝
 
