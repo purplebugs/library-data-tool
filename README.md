@@ -22,6 +22,20 @@ graph LR;
     Elasticsearch-->Elastic_index_Libraries;
 ```
 
+## Usage 🤖
+
+Pre-condition 🪴
+
+`npm install`
+
+Run app 🚀
+
+`node index.js`
+
+## Status 🚜
+
+- Library works file: JSON -> NDJSON
+
 ## Credits 👏
 
 - Example works data from [Deichman](https://deichman.no/)
