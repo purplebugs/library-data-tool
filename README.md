@@ -9,6 +9,7 @@ Personal learning project to experiment with various solutions
 ## Workflow 🛤️
 
 - Works: Book, Music, Film
+- Persons: Author
 
 ```mermaid
 graph LR;
