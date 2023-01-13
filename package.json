@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/purplebugs/libraries-data-tool/issues"
   },
-  "homepage": "https://github.com/purplebugs/libraries-data-tool#readme"
+  "homepage": "https://github.com/purplebugs/libraries-data-tool#readme",
+  "type": "module"
 }
