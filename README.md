@@ -14,9 +14,9 @@ Personal learning project to experiment with various solutions
 ```mermaid
 graph LR;
     DATA_SOURCE_Library1_Works-->PubSub;
+    DATA_SOURCE_Library2_Works-->PubSub;
+    DATA_SOURCE_Metadata_generator_for_works-->PubSub;
     PubSub-->library-data-tool;
-    DATA_SOURCE_Library2_Works-->library-data-tool;
-    DATA_SOURCE_Metadata_generator_for_works-->library-data-tool;
     library-data-tool-->Elasticsearch;
     Elasticsearch-->Elastic_index_Works;
     Elasticsearch-->Elastic_index_Persons;
