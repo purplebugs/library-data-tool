@@ -13,10 +13,10 @@ Personal learning project to experiment with various solutions
 
 ```mermaid
 graph LR;
-    DATA_SOURCE_Library1_Works-->libraries-data-tool;
-    DATA_SOURCE_Library2_Works-->libraries-data-tool;
-    DATA_SOURCE_Metadata_generator_for_works-->libraries-data-tool;
-    libraries-data-tool-->Elasticsearch;
+    DATA_SOURCE_Library1_Works-->library-data-tool;
+    DATA_SOURCE_Library2_Works-->library-data-tool;
+    DATA_SOURCE_Metadata_generator_for_works-->library-data-tool;
+    library-data-tool-->Elasticsearch;
     Elasticsearch-->Elastic_index_Works;
     Elasticsearch-->Elastic_index_Persons;
     Elasticsearch-->Elastic_index_Libraries;
