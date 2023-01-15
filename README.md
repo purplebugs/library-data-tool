@@ -1,4 +1,4 @@
-# Libraries Data Tool 📚 ⚒️
+# Library Data Tool 📚 ⚒️
 
 Convert data from library and related databases to formats to easily ingest into Elasticsearch
 

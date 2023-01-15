@@ -1,1 +1,3 @@
 .DS_Store
+!data/out/works-1673621135920.ndjson
+data/out/works-*.ndjson
