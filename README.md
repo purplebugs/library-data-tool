@@ -12,15 +12,16 @@ Personal learning project to experiment with various solutions
 - Persons: Author
 
 ```mermaid
-graph LR;
+flowchart LR;
     DATA_SOURCE_Library1_Works-->PubSub;
     DATA_SOURCE_Library2_Works-->PubSub;
     DATA_SOURCE_Metadata_generator_for_works-->PubSub;
-    PubSub-->library-data-tool;
+    PubSub-->library-data-tool:::highlightclass;
     library-data-tool-->Elasticsearch;
     Elasticsearch-->Elastic_index_Works;
     Elasticsearch-->Elastic_index_Persons;
     Elasticsearch-->Elastic_index_Libraries;
+    classDef highlightclass fill:#f96
 ```
 
 ## Usage 🤖
