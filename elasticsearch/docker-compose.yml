@@ -1,0 +1,80 @@
+version: '2.2'
+services:
+  node1:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.1
+    privileged: true
+    user: root
+    command:
+      - /bin/bash
+      - -c
+      - |
+        sysctl -w vm.max_map_count=262144 &&
+        su elasticsearch -c bin/elasticsearch
+    container_name: node1
+    environment:
+      - node.name=node1
+      - cluster.name=es-docker-clustger-bibsent
+      - discovery.seed_hosts=node1,node2
+      - cluster.initial_master_nodes=node1,node2
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data_1:/usr/share/elasticsearch/data
+      - ./dictionaries/analysis/decompounder:/usr/share/elasticsearch/config/analysis/decompounder
+      - ./dictionaries/hunspell:/usr/share/elasticsearch/config/hunspell
+    ports:
+      - 9200:9200
+    networks:
+      - elastic
+
+  node2:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.1
+    privileged: true
+    user: root
+    command:
+      - /bin/bash
+      - -c
+      - |
+        sysctl -w vm.max_map_count=262144 &&
+        su elasticsearch -c bin/elasticsearch
+    container_name: node2
+    environment:
+      - cluster.name=es-docker-clustger-bibsent
+      - node.name=node2
+      - discovery.seed_hosts=node1,node2
+      - cluster.initial_master_nodes=node1,node2
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+      - xpack.security.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - data_2:/usr/share/elasticsearch/data
+      - ./dictionaries/analysis/decompounder:/usr/share/elasticsearch/config/analysis/decompounder
+      - ./dictionaries/hunspell:/usr/share/elasticsearch/config/hunspell
+    networks:
+      - elastic
+  kibana1:
+    image: docker.elastic.co/kibana/kibana:7.16.1
+    container_name: kibana
+    environment:
+      ELASTICSEARCH_HOSTS: http://node1:9200
+    ports:
+      - 5601:5601
+    networks:
+      - elastic
+
+volumes:
+  data_1:
+    driver: local
+  data_2:
+    driver: local
+
+networks:
+  elastic:
+    driver: bridge
