@@ -1,3 +1,6 @@
 .DS_Store
+
+node_modules
+
 !data/out/works-1673621135920.ndjson
 data/out/works-*.ndjson

@@ -16,5 +16,8 @@
     "url": "https://github.com/purplebugs/libraries-data-tool/issues"
   },
   "homepage": "https://github.com/purplebugs/libraries-data-tool#readme",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.16.1"
+  }
 }
