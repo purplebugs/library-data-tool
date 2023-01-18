@@ -1,0 +1,64 @@
+PUT _index_template/test_template
+{
+  "index_patterns": [
+    "biblioteksentralen_*"
+  ],
+  "template": {
+    "settings": {
+      "index": {
+        "analysis": {
+          "filter": {
+            "length_filter2": {
+              "type": "length",
+              "min": "2"
+            },
+            "length_filter3": {
+              "type": "length",
+              "min": "3"
+            },
+            "no_stop_filter": {
+              "type": "stop",
+              "stopwords": [
+                "_norwegian_"
+              ]
+            },
+            "no_lemma": {
+              "locale": "nb_NO",
+              "type": "hunspell"
+            },
+            "word_delimiter_filter": {
+              "type": "word_delimiter_graph",
+              "preserve_original": "true"
+            },
+            "decompounder_filter": {
+              "word_list_path": "analysis/decompounder/compounds.txt",
+              "max_subword_size": "20",
+              "min_word_size": "5",
+              "type": "hyphenation_decompounder",
+              "hyphenation_patterns_path": "analysis/decompounder/nb.xml",
+              "min_subword_size": "3"
+            },
+            "autocomplete_filter": {
+              "type": "edge_ngram",
+              "min_gram": "2",
+              "max_gram": "20"
+            }
+          },
+          "analyzer": {
+            "no_example_analyzer": {
+              "filter": [
+                "lowercase",
+                "word_delimiter_filter",
+                "no_lemma",
+                "no_stop_filter"
+              ],
+              "type": "custom",
+              "tokenizer": "whitespace"
+            }
+          }
+        }
+      }
+    },
+    "mappings": {}
+  }
+}
