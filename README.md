@@ -34,6 +34,15 @@ Run app 🚀
 
 `node index.js`
 
+### Get Elasticsearch up and running locally
+
+* Install Docker compose / Docker Desktop
+
+* Navigate to the elasticsearch folder and run the docker-compose file `docker-compose up`
+
+To take advantage of the Norwegian Hunspell, and decompounder take a look at the provided example index template.
+
+
 ## Status 🚜
 
 - Library works file: JSON -> NDJSON
