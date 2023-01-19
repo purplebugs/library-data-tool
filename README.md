@@ -24,15 +24,11 @@ flowchart LR;
     classDef highlightclass fill:#f96
 ```
 
-## Usage 🤖
+## 1. Setup 🤖
 
 Pre-condition 🪴
 
 `npm install`
-
-Run app 🚀
-
-`node index.js`
 
 ### Get Elasticsearch up and running locally
 
@@ -48,10 +44,18 @@ Stopping Elasticsearch
 
 To take advantage of the Norwegian Hunspell, and decompounder take a look at the provided example index template.
 
-## Status 🚜
+## 2. Use the app 🚀
 
-- Connect to Elasticsearch and test data auto index creation: `node functions/elastic-create-index.js`
-- Library works file: JSON -> NDJSON
+### JSON -> NDJSON -> import file to Elasticsearch 💾
+
+1. Run `node index`
+2. Look for the generated file in [data/out](data/out)
+3. Import this file to Elasticsearch
+
+### JSON -> Elasticsearch client -> auto create index 🤖
+
+1. Create index in Elasticsearch from existing JSON file: `node functions/elastic-create-index.js`
+2. Verify the index was created in Elasticsearch Dev Tools: `GET game-of-thrones/_search` - note it currently updates dummy test data to the same index
 
 ## Credits 👏
 
