@@ -1,8 +1,8 @@
-import { readFileSync, writeFileSync } from "fs";
+import { writeFileSync } from "fs";
 import fileReader from "./functions/file_reader.js";
+import fileTransformer from "./functions/file_transformer.js";
 
 const now = Date.now().toString();
-const myOutput = [];
 
 // JSON -> NDJSON
 
@@ -10,9 +10,7 @@ const myOutput = [];
 const jsonFileToConvertToNDJSON = "works.json";
 
 const myParsedFile = fileReader(jsonFileToConvertToNDJSON);
-myParsedFile.forEach((item) => {
-  myOutput.push(JSON.stringify(item));
-});
+const myOutput = await fileTransformer(myParsedFile);
 
 // joining all items in the array with new lines to form NDJSON
 let myOutputFileContents = myOutput.join("\n");
