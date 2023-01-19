@@ -1,7 +1,7 @@
 version: '2.2'
 services:
   node1:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
     privileged: true
     user: root
     command:
@@ -32,7 +32,7 @@ services:
       - elastic
 
   node2:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.16.1
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.6.0
     privileged: true
     user: root
     command:
@@ -60,7 +60,7 @@ services:
     networks:
       - elastic
   kibana1:
-    image: docker.elastic.co/kibana/kibana:7.16.1
+    image: docker.elastic.co/kibana/kibana:8.6.0
     container_name: kibana
     environment:
       ELASTICSEARCH_HOSTS: http://node1:9200

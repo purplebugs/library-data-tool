@@ -24,28 +24,38 @@ flowchart LR;
     classDef highlightclass fill:#f96
 ```
 
-## Usage 🤖
+## 1. Setup 🤖
 
 Pre-condition 🪴
 
 `npm install`
 
-Run app 🚀
-
-`node index.js`
-
 ### Get Elasticsearch up and running locally
 
-* Install Docker compose / Docker Desktop
+- Install Docker compose / Docker Desktop
 
-* Navigate to the elasticsearch folder and run the docker-compose file `docker-compose up`
+- Navigate to the elasticsearch folder and run the docker-compose file `docker-compose up`
+
+Stopping Elasticsearch
+
+- To stop and preserve data `docker-compose down`
+
+- To stop and delete data `docker-compose down -v`
 
 To take advantage of the Norwegian Hunspell, and decompounder take a look at the provided example index template.
 
+## 2. Use the app 🚀
 
-## Status 🚜
+### JSON -> NDJSON -> import file to Elasticsearch 💾
 
-- Library works file: JSON -> NDJSON
+1. Run `node index`
+2. Look for the generated file in [data/out](data/out)
+3. Import this file to Elasticsearch
+
+### JSON -> Elasticsearch client -> auto create index 🤖
+
+1. Create index in Elasticsearch from existing JSON file: `node elastic_bulk.js`
+2. Verify the index was created in Elasticsearch Dev Tools: `GET library/_search` - note it uses an alias that is updated `GET _alias/library`
 
 ## Credits 👏
 
