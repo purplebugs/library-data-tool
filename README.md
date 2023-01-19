@@ -50,6 +50,7 @@ To take advantage of the Norwegian Hunspell, and decompounder take a look at the
 
 ## Status 🚜
 
+- Connect to Elasticsearch `node functions/elastic-create-index.js`
 - Library works file: JSON -> NDJSON
 
 ## Credits 👏
