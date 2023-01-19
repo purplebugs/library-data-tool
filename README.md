@@ -54,7 +54,7 @@ To take advantage of the Norwegian Hunspell, and decompounder take a look at the
 
 ### JSON -> Elasticsearch client -> auto create index 🤖
 
-1. Create index in Elasticsearch from existing JSON file: `node functions/elastic-create-index.js`
+1. Create index in Elasticsearch from existing JSON file: `node functions/elastic_create_index.js`
 2. Verify the index was created in Elasticsearch Dev Tools: `GET game-of-thrones/_search` - note it currently updates dummy test data to the same index
 
 ## Credits 👏
