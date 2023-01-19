@@ -2,5 +2,5 @@
 
 node_modules
 
-!data/out/works-1673621135920.ndjson
-data/out/works-*.ndjson
+!data/out/works_1673621135920.ndjson
+data/out/works_*.ndjson
