@@ -36,12 +36,17 @@ Run app 🚀
 
 ### Get Elasticsearch up and running locally
 
-* Install Docker compose / Docker Desktop
+- Install Docker compose / Docker Desktop
 
-* Navigate to the elasticsearch folder and run the docker-compose file `docker-compose up`
+- Navigate to the elasticsearch folder and run the docker-compose file `docker-compose up`
+
+Stopping Elasticsearch
+
+- To stop and preserve data `docker-compose down`
+
+- To stop and delete data `docker-compose down -v`
 
 To take advantage of the Norwegian Hunspell, and decompounder take a look at the provided example index template.
-
 
 ## Status 🚜
 
